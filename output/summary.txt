@@ -1,0 +1,52 @@
+Calls: 41,188   Subscribed: 4,640 (11.3%)
+
+Subscription rate by outcome of the previous campaign:
+             calls   rate
+poutcome                 
+success       1373  0.651
+failure       4252  0.142
+nonexistent  35563  0.088
+
+Subscription rate by contact channel:
+           calls   rate
+contact                
+cellular   26144  0.147
+telephone  15044  0.052
+
+Subscription rate by number of calls to the same customer in this campaign (10 means 10 or more):
+       customers   rate
+calls                  
+1          17642  0.130
+2          10570  0.115
+3           5341  0.107
+4           2651  0.094
+5           1599  0.075
+6            979  0.077
+7            629  0.060
+8            400  0.042
+9            283  0.060
+10          1094  0.036
+
+Logistic regression, 30% hold out test set of 12,357 calls. AUC: 0.803
+
+Test set by score decile (1 = highest scores):
+        calls  subscribers   rate  cumulative share of calls  cumulative share of subscribers  lift
+decile                                                                                             
+1        1236          627  0.507                        0.1                            0.450  4.50
+2        1236          272  0.220                        0.2                            0.646  1.95
+3        1236          111  0.090                        0.3                            0.726  0.80
+4        1235           76  0.062                        0.4                            0.780  0.55
+5        1236           70  0.057                        0.5                            0.830  0.51
+6        1236           59  0.048                        0.6                            0.873  0.43
+7        1235           53  0.043                        0.7                            0.911  0.38
+8        1236           42  0.034                        0.8                            0.941  0.30
+9        1236           42  0.034                        0.9                            0.971  0.30
+10       1235           40  0.032                        1.0                            1.000  0.28
+
+Targeting plan on the test set (cost per call 5 EUR and value per subscriber 100 EUR are assumptions):
+ call top deciles  calls  subscribers  share of subscribers  calls saved vs calling everyone  net value eur (assumption based)
+                3   3708         1010                 0.726                             8649                             82460
+                4   4943         1086                 0.780                             7414                             83885
+                5   6179         1156                 0.830                             6178                             84705
+               10  12357         1392                 1.000                                0                             77415
+Scaled to the full 41,188 calls, calling the top 3 deciles needs about 12,359 calls instead of 41,188 and reaches 73% of subscribers.
